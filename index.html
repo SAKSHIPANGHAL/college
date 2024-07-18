@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Dashboard</title>
+    <link rel="shortcut icon" href="./images/logo.png">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="logo" title="University Management System">
+        
+            <h2>S<span class="danger">G</span>T</h2>
+        </div>
+        <div class="navbar">
+            <a href="index.html" class="active">
+                <span class="material-icons-sharp">home</span>
+                <h3>Home</h3>
+
+            </a>
+          
+            <a href="password.html">
+                <span class="material-icons-sharp">password</span>
+                <h3>Change Password</h3>
+            </a>
+            <a href="#">
+                <span class="material-icons-sharp" onclick="">logout</span>
+                <h3>Logout</h3>
+            </a>
+            <span class="material-icons-sharp menu-icon" onclick="toggleMenu()">menu</span>
+        </div>
+        <div id="profile-btn">
+            <span class="material-icons-sharp">person</span>
+        </div>
+        <div class="theme-toggler">
+            <span class="material-icons-sharp active">light_mode</span>
+            <span class="material-icons-sharp">dark_mode</span>
+        </div>
+        <div class="hidden-menu" id="hiddenMenu">
+            <a href="#">
+                <span class="material-icons-sharp">dashboard</span>
+                <h3>Dashboard</h3>
+            </a>
+            <a href="#">
+                <span class="material-icons-sharp">notifications</span>
+                <h3>Latest Notification </h3>
+            </a>
+            <a href="timetable.html" onclick="timeTableAll()">
+                <span class="material-icons-sharp">today</span>
+                <h3>Time Table</h3>
+            </a> 
+            <a href="exam.html">
+                <span class="material-icons-sharp">grid_view</span>
+                <h3>Examination</h3>
+            </a>
+           
+            
+            <a href="#">
+                <span class="material-icons-sharp">school</span>
+                <h3>Training</h3>
+            </a>
+            <a href="#">
+                <span class="material-icons-sharp">work</span>
+                <h3>Internship & Placement</h3>
+            </a>
+            <a href="#">
+                <span class="material-icons-sharp">assignment</span>
+                <h3>Examination Details</h3>
+            </a>
+        </div>
+    </header>
+        
+      
+    
+        
+    </header>
+    <div class="container">
+        <aside>
+            <div class="profile">
+                <div class="top">
+                    <div class="profile-photo">
+                        <img src="./images/profile-1.jpg" alt="">
+                    </div>
+                    <div class="info">
+                        <p>Hey, <b>Sakshi</b> </p>
+                        <small class="text-muted">12102030</small>
+                    </div>
+                </div>
+                <div class="about">
+                    <h5>Course</h5>
+                    <p>BTech. Computer Science & Engineering</p>
+                    <h5>DOB</h5>
+                    <p>29-Feb-2020</p>
+                    <h5>Contact</h5>
+                    <p>1234567890</p>
+                    <h5>Email</h5>
+                    <p>unknown@gmail.com</p>
+                    <h5>Address</h5>
+                    <p>Delhi, India</p>
+                </div>
+            </div>
+        </aside>
+
+        
+        <main>
+            <h1>Dashboard</h1>
+            <div class="icon-container">
+                <div class="icon-card" onclick="toggleAttendance()">
+                    <span class="material-icons-sharp attendance-icon">fact_check</span>
+                    <h3>Attendance</h3>
+                </div>
+                <div class="icon-card" onclick="toggleCalendar()">
+                    <span class="material-icons-sharp calendar-icon">calendar_today</span>
+                    <h3>Calendar</h3>
+                </div>
+                <div class="icon-card" onclick="toggleAccounts()">
+                    <span class="material-icons-sharp accounts-icon">account_balance_wallet</span>
+                    <h3>Accounts</h3>
+                </div>
+                <div class="icon-card" onclick="toggleExamination()">
+                    <span class="material-icons-sharp examination-icon">assignment_turned_in</span>
+                    <h3>Examination</h3>
+                </div>
+                <div class="icon-card" onclick="toggleEvents()">
+                    <span class="material-icons-sharp events-icon">event</span>
+                    <h3>Events</h3>
+                </div>
+                <div class="icon-card" onclick="toggleLibrary()">
+                    <span class="material-icons-sharp library-icon">local_library</span>
+                    <h3>Library</h3>
+                </div>
+                <div class="icon-card" onclick="toggleProjects()">
+                    <span class="material-icons-sharp projects-icon">build</span>
+                    <h3>Projects</h3>
+                </div>
+                <div class="icon-card" onclick="toggleTraining()">
+                    <span class="material-icons-sharp training-icon">school</span>
+                    <h3>Training</h3>
+                </div>
+                <div class="icon-card" onclick="toggleInternship()">
+                    <span class="material-icons-sharp internship-icon">work</span>
+                    <h3>Internship & Placement</h3>
+                </div>
+            </div>
+            <div class="section" id="attendanceSection" style="display:none;">
+                <h2>Attendance</h2>
+                <div class="subjects">
+                    <div class="eg">
+                        <span class="material-icons-sharp">architecture</span>
+                        <h3>Engineering Graphics</h3>
+                        <h2>12/14</h2>
+                        <div class="progress">
+                            <svg><circle cx="38" cy="38" r="36"></circle></svg>
+                            <div class="number"><p>86%</p></div>
+                        </div>
+                        <small class="text-muted">Last 24 Hours</small>
+                    </div>
+                    <div class="mth">
+                        <span class="material-icons-sharp">functions</span>
+                        <h3>Mathematical Engineering</h3>
+                        <h2>27/29</h2>
+                        <div class="progress">
+                            <svg><circle cx="38" cy="38" r="36"></circle></svg>
+                            <div class="number"><p>93%</p></div>
+                        </div>
+                        <small class="text-muted">Last 24 Hours</small>
+                    </div>
+                    <div class="cs">
+                        <span class="material-icons-sharp">computer</span>
+                        <h3>Computer Architecture</h3>
+                        <h2>27/30</h2>
+                        <div class="progress">
+                            <svg><circle cx="38" cy="38" r="36"></circle></svg>
+                            <div class="number"><p>81%</p></div>
+                        </div>
+                        <small class="text-muted">Last 24 Hours</small>
+                    </div>
+                    <div class="cg">
+                        <span class="material-icons-sharp">dns</span>
+                        <h3>Database Management</h3>
+                        <h2>24/25</h2>
+                        <div class="progress">
+                            <svg><circle cx="38" cy="38" r="36"></circle></svg>
+                            <div class="number"><p>96%</p></div>
+                        </div>
+                        <small class="text-muted">Last 24 Hours</small>
+                    </div>
+                    <div class="net">
+                        <span class="material-icons-sharp">router</span>
+                        <h3>Network Security</h3>
+                        <h2>25/27</h2>
+                        <div class="progress">
+                            <svg><circle cx="38" cy="38" r="36"></circle></svg>
+                            <div class="number"><p>92%</p></div>
+                        </div>
+                        <small class="text-muted">Last 24 Hours</small>
+                    </div>
+                </div>
+            </div> <div class="section" id="calendarSection" style="display:none;">
+                <h2>Calendar</h2>
+                <ul> <li>Republic Day: 26th January</li>
+                    <li>Holi: 29th March</li>
+                    <li>Independence Day: 15th August</li>
+                    <li>Gandhi Jayanti: 2nd October</li>
+                    <li>Diwali: 4th November</li>
+                    <li>Christmas: 25th December</li>
+                </ul>
+            </div>
+            <div class="section" id="accountsSection" style="display:none;">
+                <h2>Accounts</h2>
+                <div class="accounts">
+                    <div class="fees">
+                        <h3>Fees Paid</h3>
+                        <p>$3,500</p>
+                    </div>
+                    <div class="dues">
+                        <h3>Dues Pending</h3>
+                        <p>$500</p>
+                    </div>
+                    <div class="scholarship">
+                        <h3>Scholarship Status</h3>
+                        <p>Active</p>
+                    </div>
+                </div>
+            </div>
+            <div class="section" id="examinationSection" style="display:none;">
+                <h2>Examination</h2>
+                <div class="exams">
+                    <div class="upcoming">
+                        <h3>Upcoming Exams</h3>
+                        <ul>
+                            <li>Mathematics: 10th August</li>
+                            <li>Computer Science: 12th August</li>
+                            <li>Engineering Graphics: 15th August</li>
+                        </ul>
+                    </div>
+                    <div class="results">
+                        <h3>Recent Results</h3>
+                        <ul>
+                            <li>Mathematics: 92%</li>
+                            <li>Computer Science: 87%</li>
+                            <li>Engineering Graphics: 95%</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="section" id="eventsSection" style="display:none;">
+                <h2>Events</h2>
+                <div class="events">
+                    <div class="workshops">
+                        <h3>Upcoming Workshops</h3>
+                        <ul>
+                            <li>Web Development: 5th August</li>
+                            <li>Machine Learning: 8th August</li>
+                        </ul>
+                    </div>
+                    <div class="competitions">
+                        <h3>Competitions</h3>
+                        <ul>
+                            <li>Hackathon: 12th August</li>
+                            <li>Debate Competition: 15th August</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="section" id="librarySection" style="display:none;">
+                <h2>Library</h2>
+                <div class="books">
+                    <div class="issued">
+                        <h3>Books Issued</h3>
+                        <ul>
+                            <li>Introduction to Programming</li>
+                            <li>Database Management Systems</li>
+                        </ul>
+                    </div>
+                    <div class="due-date">
+                        <h3>Due Date</h3>
+                        <ul>
+                            <li>15th August</li>
+                            <li>18th August</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="section" id="projectsSection" style="display:none;">
+                <h2>Projects</h2>
+                <div class="projects">
+                    <div class="current">
+                        <h3>Current Projects</h3>
+                        <ul>
+                            <li>Weather Application</li>
+                            <li>E-commerce Website</li>
+                        </ul>
+                    </div>
+                    <div class="completed">
+                        <h3>Completed Projects</h3>
+                        <ul>
+                            <li>To-Do List Application</li>
+                            <li>Social Media Platform</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="section" id="trainingSection" style="display:none;">
+                <h2>Training</h2>
+                <div class="training">
+                    <div class="scheduled">
+                        <h3>Scheduled Training</h3>
+                        <ul>
+                            <li>Communication Skills: 5th August</li>
+                            <li>Leadership Development: 8th August</li>
+                        </ul>
+                    </div>
+                    <div class="completed">
+                        <h3>Completed Training</h3>
+                        <ul>
+                            <li>Web Development Basics</li>
+                            <li>Python Programming</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="section" id="internshipSection" style="display:none;">
+                <h2>Internship & Placement</h2>
+                <div class="internship">
+                    <div class="internship-status">
+                        <h3>Internship Status</h3>
+                        <p>Applied</p>
+                    </div>
+                    <div class="placement-status">
+                        <h3>Placement Status</h3>
+                        <p>Not Applied</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+        
+
+        <div class="right">
+            <div class="announcements">
+                <h2>Announcements</h2>
+                <div class="updates">
+                    <div class="message">
+                        <p> <b>Academic</b> Summer training internship with Live Projects.</p>
+                        <small class="text-muted">2 Minutes Ago</small>
+                    </div>
+                    <div class="message">
+                        <p> <b>Co-curricular</b> Global internship oportunity by Student organization.</p>
+                        <small class="text-muted">10 Minutes Ago</small>
+                    </div>
+                    <div class="message">
+                        <p> <b>Examination</b> Instructions for Mid Term Examination.</p>
+                        <small class="text-muted">Yesterday</small>
+                    </div>
+                </div>
+            </div>
+
+            <div class="leaves">
+                <h2>Teachers on leave</h2>
+                <div class="teacher">
+                    <div class="profile-photo"><img src="./images/profile-2.jpeg" alt=""></div>
+                    <div class="info">
+                        <h3>The Professor</h3>
+                        <small class="text-muted">Full Day</small>
+                    </div>
+                </div>
+                <div class="teacher">
+                    <div class="profile-photo"><img src="./images/profile-3.jpg" alt=""></div>
+                    <div class="info">
+                        <h3>Lisa Manobal</h3>
+                        <small class="text-muted">Half Day</small>
+                    </div>
+                </div>
+                <div class="teacher">
+                    <div class="profile-photo"><img src="./images/profile-4.jpg" alt=""></div>
+                    <div class="info">
+                        <h3>Himanshu Jindal</h3>
+                        <small class="text-muted">Full Day</small>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="timeTable.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

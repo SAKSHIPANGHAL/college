@@ -1,4 +1,5 @@
 
+
 const sideMenu = document.querySelector("aside");
 const profileBtn = document.querySelector("#profile-btn");
 const themeToggler = document.querySelector(".theme-toggler");
@@ -91,12 +92,44 @@ document.querySelector('.timetable div h2').innerHTML = "Today's Timetable"; //T
 
 
     function toggleAttendance() {
-        const attendanceSection = document.getElementById('attendanceSection');
-        if (attendanceSection.style.display === 'none') {
-            attendanceSection.style.display = 'block';
-        } else {
-            attendanceSection.style.display = 'none';
-        }
+        toggleSection('attendanceSection');
+    }
+    
+    function toggleCalendar() {
+        toggleSection('calendarSection');
+    }
+    
+    function toggleAccounts() {
+        toggleSection('accountsSection');
+    }
+    
+    function toggleExamination() {
+        toggleSection('examinationSection');
+    }
+    
+    function toggleEvents() {
+        toggleSection('eventsSection');
+    }
+    
+    function toggleLibrary() {
+        toggleSection('librarySection');
+    }
+    
+    function toggleProjects() {
+        toggleSection('projectsSection');
+    }
+    
+    function toggleTraining() {
+        toggleSection('trainingSection');
+    }
+    
+    function toggleInternship() {
+        toggleSection('internshipSection');
+    }
+    
+    function toggleSection(sectionId) {
+        const section = document.getElementById(sectionId);
+        section.style.display = section.style.display === 'none' ? 'block' : 'none';
     }
     
 
